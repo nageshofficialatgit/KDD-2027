@@ -1,0 +1,26 @@
+{
+    "experiment_name": "wire_ablation",
+    "paths": {
+        "feat_dir": "model/cpg_features_10d",
+        "bucket_dir": "Dataset_for_first/cleaned_buckets_no_comments",
+        "checkpoint_dir": "checkpoints/wire_abl_10d",
+        "log_dir": "logs/wire_abl"
+    },
+    "model": {
+        "base_model": "answerdotai/ModernBERT-base",
+        "max_seq_len": 2048,
+        "mlm_weight": 1.0,
+        "err_weight": 0.2,
+        "n_features": 10
+    },
+    "training": {
+        "batch_size": 8,
+        "grad_accum": 8,
+        "epochs": 5,
+        "lr_encoder": 2e-05,
+        "lr_rope": 0.0001,
+        "lr_head": 2e-05,
+        "warmup_steps": 2000,
+        "max_grad_norm": 0.5
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "experiment_name": "vanilla_modernbert_solidity",
+    "paths": {
+        "bucket_dir": "../Dataset_for_first/cleaned_buckets_no_comments",
+        "checkpoint_dir": "../checkpoints/vanilla_mlm",
+        "log_dir": "../logs/vanilla_mlm",
+        "npz_dir": "../model/cpg_features"
+    },
+    "model": {
+        "base_model": "answerdotai/ModernBERT-base",
+        "max_seq_len": 2048,
+        "mlm_prob": 0.30,
+        "max_contracts": 214000
+    },
+    "training": {
+        "batch_size": 16,
+        "grad_accum": 4,
+        "epochs": 10,
+        "lr": 2e-5,
+        "weight_decay": 0.01,
+        "warmup_steps": 2000,
+        "max_grad_norm": 0.5,
+        "ema_decay": 0.999,
+        "seed": 42,
+        "num_workers": 4,
+        "resume": true
+    },
+    "logging": {
+        "log_every": 100,
+        "val_every": 1000,
+        "save_every": 2000
+    }
+}

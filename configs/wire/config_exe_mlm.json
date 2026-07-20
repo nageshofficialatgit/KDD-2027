@@ -1,0 +1,39 @@
+{
+    "experiment_name": "exe_graph_mlm_merged_current",
+    "paths": {
+        "feat_dir": "model/cpg_features_merged",
+        "mask_dir": "model/cpg_masks_merged",
+        "traj_dir": "model/cpg_trajectories",
+        "bucket_dir": "Dataset_for_first/cleaned_buckets_no_comments",
+        "token_cache_dir": "Dataset_for_first/tokenized_cache",
+        "checkpoint_dir": "Implementation/evaluation/cache/exe_graph_mlm_checkpoints",
+        "log_dir": "logs/exe_graph_mlm_pretrain"
+    },
+    "model": {
+        "base_model": "answerdotai/ModernBERT-base",
+        "max_seq_len": 8192,
+        "mlm_weight": 1.0,
+        "err_weight": 0.2
+    },
+    "training": {
+        "batch_size": 4,
+        "grad_accum": 16,
+        "epochs": 10,
+        "lr_encoder": 2e-5,
+        "lr_rope": 1e-4,
+        "lr_head": 2e-5,
+        "warmup_steps": 2000,
+        "max_grad_norm": 0.5,
+        "shard_mode": "merged"
+    },
+    "trajectory_strat": {
+        "num_trajectories": 500,
+        "init_mask_ratio": 1.0,
+        "adaptive_curriculum": true
+    },
+    "logging": {
+        "log_every": 100,
+        "val_every": 1000,
+        "save_every": 2000
+    }
+}

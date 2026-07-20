@@ -1,0 +1,11 @@
+torch>=2.0.0
+transformers>=4.30.0
+slither-analyzer>=0.9.3
+solc-select>=1.0.0
+networkx>=3.0
+tqdm
+scikit-learn
+numpy
+ijson
+onnx
+onnxruntime

@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data & model artifacts (too large for repo)
+*.pt
+*.onnx
+*.npz
+*.npy
+*.log
+*.tar.gz
+
+# Large data files
+*.jsonl
+
+# Outputs
+outputs/
+results/
+cache/
+logs/
+checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db

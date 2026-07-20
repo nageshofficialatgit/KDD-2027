@@ -1,0 +1,41 @@
+{
+    "experiment_name": "e1_s1_mlm_tfr",
+    "description": "MLM + TFR only. Tests whether injectivity alone suffices.",
+    "paths": {
+        "feat_dir": "model/cpg_features",
+        "bucket_dir": "Dataset_for_first/cleaned_buckets",
+        "checkpoint_dir": "checkpoints/e1_s1_mlm_tfr",
+        "log_dir": "logs/e1_s1_mlm_tfr"
+    },
+    "model": {
+        "base_model": "answerdotai/ModernBERT-base",
+        "max_seq_len": 2048,
+        "mlm_weight": 1.0,
+        "node_weight": 0.5,
+        "err_weight": 0.0,
+        "edge_weight": 0.0,
+        "label_smoothing": 0.1
+    },
+    "training": {
+        "batch_size": 8,
+        "grad_accum": 4,
+        "epochs": 10,
+        "lr_encoder": 2e-5,
+        "lr_rope": 1e-4,
+        "lr_head": 5e-5,
+        "weight_decay": 0.01,
+        "warmup_steps": 2000,
+        "max_grad_norm": 1.0,
+        "ema_decay": 0.999,
+        "seed": 42,
+        "num_workers": 4,
+        "resume": true
+    },
+    "logging": {
+        "save_every": 2000,
+        "val_every": 1000,
+        "log_every": 100,
+        "sentry_log_interval": 60,
+        "sentry_data_interval": 21600
+    }
+}

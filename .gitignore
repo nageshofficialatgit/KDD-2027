@@ -19,7 +19,6 @@ venv/
 
 # Data & model artifacts (too large for repo)
 *.pt
-*.onnx
 *.npz
 *.npy
 *.log
